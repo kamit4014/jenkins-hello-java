@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                echo 'Starting pipeline for jenkins-hello-java...'
+                echo 'Starting again pipeline for jenkins-hello-java...'
             }
         }
 
