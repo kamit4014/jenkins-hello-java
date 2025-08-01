@@ -1,26 +1,24 @@
-// build via GitHub webhook
-// Re-Triggering build via GitHub webhook
-// Re-trigger build for webhook test
-//Trigger build via webhook on 1-Aug-2025
-
 pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/kamit4014/jenkins-hello-java.git'
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Listing .java files in repo:'
-                bat 'dir /s *.java'
-
-                echo 'Compiling Java files:'
-                bat 'javac HelloWorld.java'
+                echo 'Building the Java project...'
+                bat 'javac Hello.java' // Change to your actual Java file
             }
         }
 
         stage('Run') {
             steps {
-                echo 'Running Java program:'
-                bat 'java HelloWorld'
+                echo 'Running the Java program...'
+                bat 'java Hello' // Change to your actual class name
             }
         }
     }
