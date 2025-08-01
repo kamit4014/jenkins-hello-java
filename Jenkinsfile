@@ -1,13 +1,8 @@
+// Triggering build via GitHub webhook
 pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                echo 'Starting again pipeline for jenkins-hello-java...'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Listing .java files in repo:'
